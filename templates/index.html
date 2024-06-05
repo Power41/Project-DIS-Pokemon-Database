@@ -1,0 +1,60 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Card Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pokemon-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .pokemon-card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+        .pokemon-card .stats {
+            text-align: left;
+        }
+        .pokemon-card .stats p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokemon Card Database</h1>
+    <div>
+        {% for row in data %}
+        <div class="pokemon-card">
+            <img src="{{ row.image_url }}" alt="{{ row.name }}">
+            <div class="stats">
+                <p><strong>Name:</strong> {{ row.name }}</p>
+                <p><strong>Set:</strong> {{ row.set }}</p>
+                <p><strong>Type:</strong> {{ row.type }}</p>
+                <p><strong>Subtypes:</strong> {{ row.subtypes }}</p>
+                <p><strong>Level:</strong> {{ row.level }}</p>
+                <p><strong>HP:</strong> {{ row.hp }}</p>
+                <p><strong>Ability:</strong> {{ 'Yes' if row.ability else 'No' }}</p>
+                <p><strong>Weakness:</strong> {{ row.weakness }}</p>
+                <p><strong>Retreat Cost:</strong> {{ row.retreatCost }}</p>
+                <p><strong>Resistance:</strong> {{ row.resistance }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
