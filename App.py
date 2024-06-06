@@ -1,7 +1,12 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, url_for, flash, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
+from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Configuration for PostgreSQL connection
 username = 'postgres'  # Erstat med dit PostgreSQL brugernavn
@@ -11,9 +16,25 @@ host = 'localhost'
 port = '5432'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{username}:{password}@{host}:{port}/{database}'
+app.config['SECRET_KEY'] = 'your_secret_key'  # Replace with your secret key
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
+class User(db.Model, UserMixin):
+    __tablename__ = 'users'  # Specify the table name
+    username = db.Column(db.String(20), unique=True, nullable=False, primary_key=True)
+    password = db.Column(db.String(20), nullable=False)
+
+    def get_id(self):
+        return self.username
+
+@login_manager.user_loader
+def load_user(username):
+    return User.query.get(username)
 
 class PokemonCard(db.Model):
     __tablename__ = 'pokemon_cards'
@@ -30,9 +51,27 @@ class PokemonCard(db.Model):
     retreatCost = db.Column(db.Integer)
     resistance = db.Column(db.String(50))
     rarity = db.Column(db.String(50))
-    # description = db.Column(db.String(500))  # Commented out for now
+
+# Registration Form
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    password = PasswordField('Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Sign Up')
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('That username is taken. Please choose a different one.')
+
+# Login Form
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Login')
 
 @app.route('/')
+@login_required
 def index():
     query = PokemonCard.query
     
@@ -72,9 +111,6 @@ def index():
         query = query.filter(PokemonCard.rarity.ilike(f'{rarity}%'))
 
     pokemon_cards = query.all()
-
-    for card in pokemon_cards:
-        card.image_url = url_for('static', filename=f'CardN/{card.id}.jpg')
     
     filters = {
         'start_letters': start_letters,
@@ -92,11 +128,48 @@ def index():
 
     return render_template('index.html', data=pokemon_cards, filters=filters)
 
+
 @app.route('/pokemon/<int:id>')
+@login_required
 def pokemon_detail(id):
     pokemon = PokemonCard.query.get_or_404(id)
-    pokemon.image_url = url_for('static', filename=f'CardN/{pokemon.id}.jpg')
+    pokemon.image_url = url_for('static', filename=f'images/{pokemon.id}.jpg')
     return render_template('pokemon_detail.html', pokemon=pokemon)
+
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created! You are now able to log in', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user and user.password == form.password.data:
+            login_user(user, remember=True)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('index'))
+        else:
+            flash('Login Unsuccessful. Please check username and password', 'danger')
+    return render_template('login.html', title='Login', form=form)
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
