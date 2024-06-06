@@ -12,6 +12,13 @@
             color: #333;
             padding: 20px;
         }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         .pokemon-card-detail {
             max-width: 600px;
             margin: 0 auto;
@@ -56,6 +63,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
     <div class="pokemon-card-detail">
         <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
         <div class="stats">
