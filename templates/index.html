@@ -17,6 +17,14 @@
             color: #ffcb05;
             text-shadow: 2px 2px 0px #3b4cca;
         }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
         form {
             background-color: #fff;
             padding: 20px;
@@ -90,6 +98,11 @@
     </style>
 </head>
 <body>
+    <div class="header">
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
     <h1>Pokemon Card Database</h1>
     <form method="get" action="/">
         <label for="start_letters">Filter by starting letters:</label>
@@ -132,7 +145,7 @@
         {% for row in data %}
         <div class="pokemon-card">
             <a href="{{ url_for('pokemon_detail', id=row.id) }}">
-                <img src="{{ row.image_url }}" alt="{{ row.name }}">
+                <img src="{{ url_for('static', filename='images/' ~ row.id ~ '.jpg') }}" alt="{{ row.name }}">
             </a>
             <div class="stats">
                 <p><strong>Name:</strong> <span>{{ row.name }}</span></p>
