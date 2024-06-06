@@ -1,29 +1,76 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Card Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #ffcb05;
+            text-shadow: 2px 2px 0px #3b4cca;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ffcb05;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"], button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 170px);
+            font-family: 'Press Start 2P', cursive;
+        }
+        button {
+            background-color: #ffcb05;
+            color: #3b4cca;
+            cursor: pointer;
+        }
+        button[type="button"] {
+            background-color: #3b4cca;
+            color: #ffcb05;
+        }
+        button:hover {
+            background-color: #3b4cca;
+            color: #ffcb05;
+        }
+        button[type="button"]:hover {
+            background-color: #ffcb05;
+            color: #3b4cca;
         }
         .pokemon-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            border: 2px solid #3b4cca;
+            border-radius: 10px;
             padding: 16px;
             margin: 16px;
             display: inline-block;
             vertical-align: top;
-            width: 200px;
+            width: 220px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #ffcb05;
         }
         .pokemon-card img {
             max-width: 100%;
             height: auto;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 2px solid #3b4cca;
             padding-bottom: 16px;
             margin-bottom: 16px;
         }
@@ -32,26 +79,73 @@
         }
         .pokemon-card .stats p {
             margin: 4px 0;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+        }
+        .pokemon-card .stats p strong {
+            flex-shrink: 0;
         }
     </style>
 </head>
 <body>
     <h1>Pokemon Card Database</h1>
+    <form method="get" action="/">
+        <label for="start_letters">Filter by starting letters:</label>
+        <input type="text" id="start_letters" name="start_letters" value="{{ filters.start_letters }}">
+        <br>
+        <label for="set">Filter by set:</label>
+        <input type="text" id="set" name="set" value="{{ filters.set }}">
+        <br>
+        <label for="type">Filter by type:</label>
+        <input type="text" id="type" name="type" value="{{ filters.type }}">
+        <br>
+        <label for="subtypes">Filter by subtypes:</label>
+        <input type="text" id="subtypes" name="subtypes" value="{{ filters.subtypes }}">
+        <br>
+        <label for="level">Filter by level:</label>
+        <input type="number" id="level" name="level" value="{{ filters.level }}">
+        <br>
+        <label for="hp">Filter by HP:</label>
+        <input type="number" id="hp" name="hp" value="{{ filters.hp }}">
+        <br>
+        <label for="retreat_cost">Filter by retreat cost:</label>
+        <input type="number" id="retreat_cost" name="retreat_cost" value="{{ filters.retreat_cost }}">
+        <br>
+        <label for="ability">Filter by ability (Yes/No):</label>
+        <input type="text" id="ability" name="ability" value="{{ filters.ability }}">
+        <br>
+        <label for="weakness">Filter by weakness:</label>
+        <input type="text" id="weakness" name="weakness" value="{{ filters.weakness }}">
+        <br>
+        <label for="resistance">Filter by resistance:</label>
+        <input type="text" id="resistance" name="resistance" value="{{ filters.resistance }}">
+        <br>
+        <label for="rarity">Filter by rarity:</label>
+        <input type="text" id="rarity" name="rarity" value="{{ filters.rarity }}">
+        <br>
+        <button type="submit">Filter</button>
+        <button type="button" onclick="window.location.href='/'">Reset</button>
+    </form>
     <div>
         {% for row in data %}
         <div class="pokemon-card">
-            <img src="{{ row.image_url }}" alt="{{ row.name }}">
+            <a href="{{ url_for('pokemon_detail', id=row.id) }}">
+                <img src="{{ row.image_url }}" alt="{{ row.name }}">
+            </a>
             <div class="stats">
-                <p><strong>Name:</strong> {{ row.name }}</p>
-                <p><strong>Set:</strong> {{ row.set }}</p>
-                <p><strong>Type:</strong> {{ row.type }}</p>
-                <p><strong>Subtypes:</strong> {{ row.subtypes }}</p>
-                <p><strong>Level:</strong> {{ row.level }}</p>
-                <p><strong>HP:</strong> {{ row.hp }}</p>
-                <p><strong>Ability:</strong> {{ 'Yes' if row.ability else 'No' }}</p>
-                <p><strong>Weakness:</strong> {{ row.weakness }}</p>
-                <p><strong>Retreat Cost:</strong> {{ row.retreatCost }}</p>
-                <p><strong>Resistance:</strong> {{ row.resistance }}</p>
+                <p><strong>Name:</strong> <span>{{ row.name }}</span></p>
+                <p><strong>Set:</strong> <span>{{ row.set }}</span></p>
+                <p><strong>Type:</strong> <span>{{ row.type }}</span></p>
+                <p><strong>Subtypes:</strong> <span>{{ row.subtypes }}</span></p>
+                <p><strong>Level:</strong> <span>{{ row.level }}</span></p>
+                <p><strong>HP:</strong> <span>{{ row.hp }}</span></p>
+                <p><strong>Ability:</strong> <span>{{ 'Yes' if row.ability else 'No' }}</span></p>
+                <p><strong>Weakness:</strong> <span>{{ row.weakness }}</span></p>
+                <p><strong>Retreat Cost:</strong> <span>{{ row.retreatCost }}</span></p>
+                <p><strong>Resistance:</strong> <span>{{ row.resistance }}</span></p>
+                <p><strong>Rarity:</strong> <span>{{ row.rarity }}</span></p>
             </div>
         </div>
         {% endfor %}
