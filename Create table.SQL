@@ -1,4 +1,4 @@
-CREATE TABLE pokemon_cards (
+CREATE TABLE IF NOT EXISTS pokemon_cards (
     id SERIAL PRIMARY KEY,
     set VARCHAR(50),
     name VARCHAR(100),
@@ -10,4 +10,7 @@ CREATE TABLE pokemon_cards (
     weakness VARCHAR(50),
     retreatCost INTEGER,
     resistance VARCHAR(50)
+    rarity VARCHAR(50);
 );
+
+
