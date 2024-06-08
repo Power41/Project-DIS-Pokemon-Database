@@ -12,7 +12,7 @@ port = '5432'
 engine = create_engine(f'postgresql://{username}:{password}@{host}:{port}/{database}')
 
 # Load data from CSV file
-pokemon_data = pd.read_csv(r'C:\Users\caspe\OneDrive - University of Copenhagen\DIS\Project\Project\tmp\Project_data.csv')
+pokemon_data = pd.read_csv('Your-file-directory/tmp/Project_data.csv')
 
 pokemon_data['ability'] = pokemon_data['ability'].apply(lambda x: True if x == 'Yes' else False)
 
