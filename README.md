@@ -1,6 +1,8 @@
 # Pokemon card database - track your favorite Pokemon trading cards! 
 ![](tmp/showcase.png)
 
+
+
 # running database project: 
 
 Assumes a working Python 3 installation (with python=python3 and pip=pip3).
@@ -37,3 +39,13 @@ IMPORTANT: In Data.py change the file directory to the full path of the 'Project
 (5) Pokemon cards / Each Pokémon card can be clicked on to access its dedicated webpage, where you can favorite the specific Pokémon.
 
 (6) Profile / Each user has their own individual page where they can view their favorite Pokémon cards.
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+#E/R diagram of Pokemon card database
+![](tmp/E_R-pokemon.png)
