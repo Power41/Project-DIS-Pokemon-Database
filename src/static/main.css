@@ -1,0 +1,274 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: url('/static/background1.webp') no-repeat center center fixed;
+    background-size: cover; 
+    color: #333;
+    padding: 20px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+
+.logout-form {
+    margin: 0;
+    padding: 0;
+}
+
+.logout-form button {
+    background-color: #ffcb05;
+    color: #3b4cca;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.logout-form button:hover {
+    background-color: #3b4cca;
+    color: #ffcb05;
+}
+
+.profile-button {
+    background-color: #ffcb05;
+    color: #3b4cca;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.profile-button:hover {
+    background-color: #3b4cca;
+    color: #ffcb05;
+}
+
+.database-header {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.database-header h1 {
+    margin: 0;
+    color: #ffcb05;
+    text-shadow: 2px 2px 0px #3b4cca;
+    font-size: 50px;
+}
+
+.database-header .line {
+    height: 5px;
+    background-color: #ffcb05;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-bar-row input[type="text"] {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    width: 300px;
+}
+
+.label-row {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #ffcb05;
+    text-shadow: 2px 2px 0px #3b4cca;
+}
+
+.filter-row, .number-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.filter-row select,
+.number-filter-row input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    width: 200px;
+    margin: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-row button {
+    background-color: #ffcb05;
+    color: #3b4cca;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.button-row button:hover {
+    background-color: #3b4cca;
+    color: #ffcb05;
+}
+
+.pokemon-card {
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px;
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffcb05;
+}
+
+.pokemon-card img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 2px solid #3b4cca;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.pokemon-card .stats {
+    text-align: left;
+}
+
+.pokemon-card .stats p {
+    margin: 4px 0;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+.pokemon-card .stats p strong {
+    flex-shrink: 0;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.back-button, .favorite-button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffcb05;
+    color: #3b4cca;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+.back-button:hover, .favorite-button:hover {
+    background-color: #3b4cca;
+    color: #ffcb05;
+}
+
+.profile-link {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ffcb05;
+    color: #3b4cca;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.profile-link:hover {
+    background-color: #3b4cca;
+    color: #ffcb05;
+}
+
+.pokemon-card-detail {
+    max-width: 220px; /* Match the width of the cards in the index */
+    margin: 20px auto; /* Center and add some margin */
+    padding: 16px;
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    background-color: #ffcb05; /* Yellow background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pokemon-card-detail img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 2px solid #3b4cca;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.pokemon-card-detail .stats {
+    text-align: left;
+}
+
+.pokemon-card-detail .stats p {
+    margin: 4px 0;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+.pokemon-card-detail .stats p strong {
+    flex-shrink: 0;
+}
+
+
+
+
