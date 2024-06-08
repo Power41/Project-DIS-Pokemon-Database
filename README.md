@@ -1,5 +1,5 @@
 # Pokemon card database - track your favorite Pokemon trading cards! 
-![](tmp/showcase.PNG)
+![](tmp/showcase.png)
 
 # running database project: 
 
