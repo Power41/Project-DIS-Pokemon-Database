@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='LogoPokemon.png') }}" alt="Pokemon Logo" class="logo">
+        <h1>Login</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+                {% for error in form.username.errors %}
+                    <span class="error">[{{ error }}]</span>
+                {% endfor %}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% for category, message in messages %}
+                        {% if category == 'username_not_found' %}
+                            <span class="error">{{ message }}</span>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            <div>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                    <span class="error">[{{ error }}]</span>
+                {% endfor %}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% for category, message in messages %}
+                        {% if category == 'incorrect_password' %}
+                            <span class="error">{{ message }}</span>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+    </div>
+</body>
+</html>
+
+
