@@ -7,3 +7,4 @@ Flask-Login
 psycopg2
 requests
 pandas
+sqlalchemy
