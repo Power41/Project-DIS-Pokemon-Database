@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ current_user.username }}'s Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="toolbar">
+        <form action="{{ url_for('logout') }}" method="post" class="logout-form">
+            <button type="submit">Logout</button>
+        </form>
+        <a href="{{ url_for('profile') }}" class="profile-button">Profile</a>
+    </div>
+    <div class="database-header">
+        <div class="line"></div>
+        <h1>{{ current_user.username }}'s Favorite Pokémon</h1>
+        <div class="line"></div>
+    </div>
+    <div class="cards">
+        {% for pokemon in favorites %}
+        <div class="pokemon-card">
+            <a href="{{ url_for('pokemon_detail', id=pokemon.id) }}">
+                <img src="{{ url_for('static', filename='images/' ~ pokemon.id ~ '.jpg') }}" alt="{{ pokemon.name }}">
+            </a>
+            <div class="stats">
+                <p><strong>Name:</strong> <span>{{ pokemon.name }}</span></p>
+                <p><strong>Set:</strong> <span>{{ pokemon.set }}</span></p>
+                <p><strong>Type:</strong> <span>{{ pokemon.type }}</span></p>
+                <p><strong>Subtypes:</strong> <span>{{ pokemon.subtypes }}</span></p>
+                <p><strong>Level:</strong> <span>{{ pokemon.level }}</span></p>
+                <p><strong>HP:</strong> <span>{{ pokemon.hp }}</span></p>
+                <p><strong>Ability:</strong> <span>{{ 'Yes' if pokemon.ability else 'No' }}</span></p>
+                <p><strong>Weakness:</strong> <span>{{ pokemon.weakness }}</span></p>
+                <p><strong>Retreat Cost:</strong> <span>{{ pokemon.retreatCost }}</span></p>
+                <p><strong>Resistance:</strong> <span>{{ pokemon.resistance }}</span></p>
+                <p><strong>Rarity:</strong> <span>{{ pokemon.rarity }}</span></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-button">Back</a>
+</body>
+</html>
+
+
+
+
+
+
+

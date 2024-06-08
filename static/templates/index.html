@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Card Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="toolbar">
+        <form action="{{ url_for('logout') }}" method="post" class="logout-form">
+            <button type="submit">Logout</button>
+        </form>
+        <a href="{{ url_for('profile') }}" class="profile-button">Profile</a> <!-- Added Profile Button -->
+    </div>
+    <div class="database-header">
+        <div class="line"></div>
+        <h1>Pokemon Trading Card Database</h1>
+        <div class="line"></div>
+    </div>
+    <form method="get" action="/" class="search-form">
+        <div class="search-bar-row">
+            <input type="text" id="start_letters" name="start_letters" placeholder="Search Name" value="{{ filters.start_letters }}">
+        </div>
+        <div class="label-row">
+            <span>Filters for:</span>
+        </div>
+        <div class="filter-row">
+            <select id="set" name="set">
+                <option value="">Set</option>
+                {% for set in sets %}
+                <option value="{{ set }}" {% if filters.set == set %}selected{% endif %}>{{ set }}</option>
+                {% endfor %}
+            </select>
+            <select id="type" name="type">
+                <option value="">Type</option>
+                {% for type in types %}
+                <option value="{{ type }}" {% if filters.type == type %}selected{% endif %}>{{ type }}</option>
+                {% endfor %}
+            </select>
+            <select id="subtypes" name="subtypes">
+                <option value="">Subtypes</option>
+                {% for subtype in subtypes %}
+                <option value="{{ subtype }}" {% if filters.subtypes == subtype %}selected{% endif %}>{{ subtype }}</option>
+                {% endfor %}
+            </select>
+            <select id="ability" name="ability">
+                <option value="">Ability</option>
+                <option value="True" {% if filters.ability == 'True' %}selected{% endif %}>Yes</option>
+                <option value="False" {% if filters.ability == 'False' %}selected{% endif %}>No</option>
+            </select>
+            <select id="weakness" name="weakness">
+                <option value="">Weakness</option>
+                {% if 'None' not in weaknesses %}
+                <option value="None" {% if filters.weakness == 'None' %}selected{% endif %}>None</option>
+                {% endif %}
+                {% for weakness in weaknesses %}
+                <option value="{{ weakness }}" {% if filters.weakness == weakness %}selected{% endif %}>{{ weakness }}</option>
+                {% endfor %}
+            </select>
+            <select id="resistance" name="resistance">
+                <option value="">Resistance</option>
+                {% if 'None' not in resistances %}
+                <option value="None" {% if filters.resistance == 'None' %}selected{% endif %}>None</option>
+                {% endif %}
+                {% for resistance in resistances %}
+                <option value="{{ resistance }}" {% if filters.resistance == resistance %}selected{% endif %}>{{ resistance }}</option>
+                {% endfor %}
+            </select>
+            <select id="rarity" name="rarity">
+                <option value="">Rarity</option>
+                {% for rarity in rarities %}
+                <option value="{{ rarity }}" {% if filters.rarity == rarity %}selected{% endif %}>{{ rarity }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="label-row">
+            <span>Minimum values for:</span>
+        </div>
+        <div class="number-filter-row">
+            <input type="number" id="hp" name="hp" placeholder="HP" value="{{ filters.hp }}">
+            <input type="number" id="level" name="level" placeholder="Level" value="{{ filters.level }}">
+            <input type="number" id="retreat_cost" name="retreat_cost" placeholder="Retreat Cost" value="{{ filters.retreat_cost }}">
+        </div>
+        <div class="button-row">
+            <button type="submit">Search</button>
+            <button type="button" onclick="window.location.href='/'">Reset Filters</button>
+        </div>
+    </form>
+    <div>
+        {% for row in data %}
+        <div class="pokemon-card">
+            <a href="{{ url_for('pokemon_detail', id=row.id) }}">
+                <img src="{{ url_for('static', filename='images/' ~ row.id ~ '.jpg') }}" alt="{{ row.name }}">
+            </a>
+            <div class="stats">
+                <p><strong>Name:</strong> <span>{{ row.name }}</span></p>
+                <p><strong>Set:</strong> <span>{{ row.set }}</span></p>
+                <p><strong>Type:</strong> <span>{{ row.type }}</span></p>
+                <p><strong>Subtypes:</strong> <span>{{ row.subtypes }}</span></p>
+                <p><strong>Level:</strong> <span>{{ row.level }}</span></p>
+                <p><strong>HP:</strong> <span>{{ row.hp }}</span></p>
+                <p><strong>Ability:</strong> <span>{{ 'Yes' if row.ability else 'No' }}</span></p>
+                <p><strong>Weakness:</strong> <span>{{ row.weakness }}</span></p>
+                <p><strong>Retreat Cost:</strong> <span>{{ row.retreatCost }}</span></p>
+                <p><strong>Resistance:</strong> <span>{{ row.resistance }}</span></p>
+                <p><strong>Rarity:</strong> <span>{{ row.rarity }}</span></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
