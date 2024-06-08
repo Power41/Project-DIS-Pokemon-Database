@@ -14,8 +14,9 @@ Assumes a working Python 3 installation (with python=python3 and pip=pip3).
 
 (3) Execute the SQL script 'Create_table.SQL' to create the required tables for the database. 
 
-(4) Run Data.py to Import data from 'Project_data.csv' over to database
+(4) Run Data.py to Import data from 'Project_data.csv' over to database 
 IMPORTANT: In Data.py change the file directory to the full path of the 'Project_data.csv' - file
+IMPORTANT: In static folder unzip 'images.zip'
 
 (5) In the 'App.py' - file, set your own database name, username, and password. 
 
