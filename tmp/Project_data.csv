@@ -1,0 +1,151 @@
+id,set,name,type,subtypes,level,hp,ability,weakness,retreatCost,rarity,resistance
+1,Base,Abra,Psychic,Basic,10,30,No,Psychic,0,Common,
+2,Base,Alakazam,Psychic,Stage 2,42,80,Yes,Psychic,3,Rare Holo,
+3,Base,Arcanine,Fire,Stage 1,45,100,No,Water,3,Uncommon,
+4,Base,Beedrill,Grass,Stage 2,32,80,No,Fire,0,Rare,Fighting
+5,Base,Blastoise,Water,Stage 2,52,100,Yes,Lightning,3,Rare Holo,
+6,Base,Bulbasaur,Grass,Basic,13,40,No,Fire,1,Common,
+7,Base,Caterpie,Grass,Basic,13,40,No,Fire,1,Common,
+8,Base,Chansey,Colorless,Basic,55,120,No,Fighting,1,Rare Holo,Psychic
+9,Base,Charizard,Fire,Stage 2,76,120,Yes,Water,3,Rare Holo,Fighting
+10,Base,Charmander,Fire,Basic,10,50,No,Water,1,Common,
+11,Base,Charmeleon,Fire,Stage 1,32,80,No,Water,1,Uncommon,
+12,Base,Clefairy,Colorless,Basic,14,40,No,Fighting,1,Rare Holo,Psychic
+13,Base,Dewgong,Water,Stage 1,42,80,No,Lightning,3,Uncommon,
+14,Base,Diglett,Fighting,Basic,8,30,No,Grass,0,Common,Lightning
+15,Base,Doduo,Colorless,Basic,10,50,No,Lightning,0,Common,Fighting
+16,Base,Dragonair,Colorless,Stage 1,33,80,No,,2,Rare,Psychic
+17,Base,Dratini,Colorless,Basic,10,40,No,,1,Uncommon,Psychic
+18,Base,Drowzee,Psychic,Basic,10,50,No,Psychic,1,Common,
+19,Base,Dugtrio,Fighting,Stage 1,36,70,No,Grass,2,Rare,Lightning
+20,Base,Electabuzz,Lightning,Basic,35,70,No,Fighting,2,Rare,
+21,Base,Electrode,Lightning,Stage 1,40,80,Yes,Fighting,1,Rare,
+22,Base,Farfetch'd,Colorless,Basic,20,50,No,Lightning,1,Uncommon,Fighting
+23,Base,Gastly,Psychic,Basic,8,30,No,,0,Common,Fighting
+24,Base,Growlithe,Fire,Basic,18,60,No,Water,1,Uncommon,
+25,Base,Gyarados,Water,Stage 1,41,100,No,Grass,3,Rare Holo,Fighting
+26,Base,Haunter,Psychic,Stage 1,22,60,No,,1,Uncommon,Fighting
+27,Base,Hitmonchan,Fighting,Basic,33,70,No,Psychic,2,Rare Holo,
+28,Base,Ivysaur,Grass,Stage 1,20,60,No,Fire,1,Uncommon,
+29,Base,Jynx,Psychic,Basic,23,70,No,Psychic,2,Uncommon,
+30,Base,Kadabra,Psychic,Stage 1,38,60,No,Psychic,3,Uncommon,
+31,Base,Kakuna,Grass,Stage 1,23,80,No,Fire,2,Uncommon,
+32,Base,Koffing,Grass,Basic,13,50,No,Psychic,1,Common,
+33,Base,Machamp,Fighting,Stage 2,67,100,Yes,Psychic,3,Rare Holo,
+34,Base,Machoke,Fighting,Stage 1,40,80,No,Psychic,3,Uncommon,
+35,Base,Machop,Fighting,Basic,20,50,No,Psychic,1,Common,
+36,Base,Magikarp,Water,Basic,8,30,No,Lightning,1,Uncommon,
+37,Base,Magmar,Fire,Basic,24,50,No,Water,2,Uncommon,
+38,Base,Magnemite,Lightning,Basic,13,40,No,Fighting,1,Common,
+39,Base,Magneton,Lightning,Stage 1,28,60,No,Fighting,1,Rare Holo,
+40,Base,Metapod,Grass,Stage 1,21,70,No,Fire,2,Common,
+41,Base,Mewtwo,Psychic,Basic,53,60,No,Psychic,3,Rare Holo,
+42,Base,Nidoking,Grass,Stage 2,23,90,No,Psychic,3,Rare Holo,
+43,Base,Nidoran ♂,Grass,Basic,20,40,No,Psychic,1,Common,
+44,Base,Nidorino,Grass,Stage 1,25,60,No,Psychic,1,Uncommon,
+45,Base,Ninetales,Fire,Stage 1,32,80,No,Water,1,Rare Holo,
+46,Base,Onix,Fighting,Basic,12,90,No,Grass,3,Common,
+47,Base,Pidgeotto,Colorless,Stage 1,36,60,No,Lightning,1,Rare,Fighting
+48,Base,Pidgey,Colorless,Basic,8,40,No,Lightning,1,Common,Fighting
+49,Base,Pikachu,Lightning,Basic,12,40,No,Fighting,1,Common,
+50,Base,Poliwag,Water,Basic,13,40,No,Grass,1,Common,
+51,Base,Poliwhirl,Water,Stage 1,28,60,No,Grass,1,Uncommon,
+52,Base,Poliwrath,Water,Stage 2,48,90,No,Grass,3,Rare Holo,
+53,Base,Ponyta,Fire,Basic,10,40,No,Water,1,Common,
+54,Base,Porygon,Colorless,Basic,12,30,No,Fighting,1,Uncommon,Psychic
+55,Base,Raichu,Lightning,Stage 1,40,80,No,Fighting,1,Rare Holo,
+56,Base,Raticate,Colorless,Stage 1,41,60,No,Fighting,1,Uncommon,Psychic
+57,Base,Rattata,Colorless,Basic,9,30,No,Fighting,0,Common,Psychic
+58,Base,Sandshrew,Fighting,Basic,12,40,No,Grass,1,Common,Lightning
+59,Base,Seel,Water,Basic,12,60,No,Lightning,1,Uncommon,
+60,Base,Squirtle,Water,Basic,8,40,No,Lightning,1,Common,
+61,Base,Starmie,Water,Stage 1,28,60,No,Lightning,1,Common,
+62,Base,Staryu,Water,Basic,15,40,No,Lightning,1,Common,
+63,Base,Tangela,Grass,Basic,8,50,No,Fire,2,Common,
+64,Base,Venusaur,Grass,Stage 2,67,100,Yes,Fire,2,Rare Holo,
+65,Base,Voltorb,Lightning,Basic,10,40,No,Fighting,1,Common,
+66,Base,Vulpix,Fire,Basic,11,50,No,Water,1,Common,
+67,Base,Wartortle,Water,Stage 1,22,70,No,Lightning,1,Uncommon,
+68,Base,Weedle,Grass,Basic,12,40,No,Fire,1,Common,
+69,Base,Zapdos,Lightning,Basic,64,90,No,,3,Rare Holo,Fighting
+70,Jungle,Bellsprout,Grass,Basic,11,40,No,Fire,1,Common,
+71,Jungle,Butterfree,Grass,Stage 2,28,70,No,Fire,0,Uncommon,Fighting
+72,Jungle,Clefable,Colorless,Stage 1,34,70,No,Fighting,2,Rare,Psychic
+73,Jungle,Cubone,Fighting,Basic,13,40,No,Grass,1,Common,Lightning
+74,Jungle,Dodrio,Colorless,Stage 1,28,70,Yes,Lightning,0,Uncommon,Fighting
+75,Jungle,Eevee,Colorless,Basic,12,50,No,Fighting,1,Common,Psychic
+76,Jungle,Exeggcute,Grass,Basic,14,50,No,Fire,1,Common,
+77,Jungle,Exeggutor,Grass,Stage 1,35,80,No,Fire,3,Uncommon,
+78,Jungle,Fearow,Colorless,Stage 1,27,70,No,Lightning,0,Uncommon,Fighting
+79,Jungle,Flareon,Fire,Stage 1,28,70,No,Water,1,Rare,
+80,Jungle,Gloom,Grass,Stage 1,35,60,No,Fire,1,Uncommon,
+81,Jungle,Goldeen,Water,Basic,12,40,No,Lightning,0,Common,
+82,Jungle,Jigglypuff,Colorless,Basic,14,60,No,Fighting,1,Common,Psychic
+83,Jungle,Jolteon,Lightning,Stage 1,29,70,No,Fighting,1,Rare,
+84,Jungle,Kangaskhan,Colorless,Basic,40,90,No,Fighting,3,Rare,Psychic
+85,Jungle,Lickitung,Colorless,Basic,10,90,No,Fighting,3,Uncommon,Psychic
+86,Jungle,Mankey,Fighting,Basic,7,30,Yes,Psychic,0,Common,
+87,Jungle,Marowak,Fighting,Stage 1,26,60,No,Grass,1,Uncommon,Lightning
+88,Jungle,Meowth,Colorless,Basic,15,50,No,Fighting,1,Common,Psychic
+89,Jungle,Mr. Mime,Psychic,Basic,28,40,Yes,Psychic,1,Rare,
+90,Jungle,Nidoqueen,Grass,Stage 2,43,90,No,Psychic,3,Rare,
+91,Jungle,Nidoran ♀,Grass,Basic,13,60,No,Psychic,1,Common,
+92,Jungle,Nidorina,Grass,Stage 1,24,70,No,Psychic,1,Uncommon,
+93,Jungle,Oddish,Grass,Basic,8,50,No,Fire,1,Common,
+94,Jungle,Paras,Grass,Basic,8,40,No,Fire,1,Common,
+95,Jungle,Parasect,Grass,Stage 1,28,60,No,Fire,1,Uncommon,
+96,Jungle,Persian,Colorless,Stage 1,25,70,No,Fighting,0,Uncommon,Psychic
+97,Jungle,Pidgeot,Colorless,Stage 2,40,80,No,Lightning,0,Rare,Fighting
+98,Jungle,Pinsir,Grass,Basic,24,60,No,Fire,1,Rare,
+99,Jungle,Primeape,Fighting,Stage 1,45,70,No,Psychic,1,Uncommon,
+100,Jungle,Rapidash,Fire,Stage 1,33,70,No,Water,0,Uncommon,
+101,Jungle,Rhydon,Fighting,Stage 1,48,100,No,Grass,3,Uncommon,Lightning
+102,Jungle,Rhyhorn,Fighting,Basic,18,70,No,Grass,3,Common,Lightning
+103,Jungle,Scyther,Grass,Basic,25,70,No,Fire,0,Rare,Fighting
+104,Jungle,Seaking,Water,Stage 1,28,70,No,Lightning,1,Uncommon,
+105,Jungle,Snorlax,Colorless,Basic,20,90,Yes,Fighting,4,Rare,Psychic
+106,Jungle,Spearow,Colorless,Basic,13,50,No,Lightning,0,Common,Fighting
+107,Jungle,Tauros,Colorless,Basic,24,60,No,Fighting,2,Uncommon,Psychic
+108,Jungle,Vaporeon,Water,Stage 1,42,80,No,Lightning,1,Rare,
+109,Jungle,Venomoth,Grass,Stage 1,28,70,Yes,Fire,0,Rare,Fighting
+110,Jungle,Venonat,Grass,Basic,12,40,No,Fire,1,Common,
+111,Jungle,Victreebel,Grass,Stage 2,42,80,No,Fire,2,Rare,
+112,Jungle,Vileplume,Grass,Stage 2,35,80,Yes,Fire,2,Rare,
+113,Jungle,Weepinbell,Grass,Stage 1,28,70,No,Fire,1,Uncommon,
+114,Jungle,Wigglytuff,Colorless,Stage 1,36,80,No,Fighting,2,Rare,Psychic
+115,Fossil,Aerodactyl,Fighting,Stage 1,28,60,Yes,Grass,2,Rare,Fighting
+116,Fossil,Arbok,Grass,Stage 1,27,60,No,Psychic,2,Uncommon,
+117,Fossil,Articuno,Water,Basic,35,70,No,,2,Rare,Fighting
+118,Fossil,Cloyster,Water,Stage 1,25,50,No,Lightning,2,Uncommon,
+119,Fossil,Ditto,Colorless,Basic,20,50,Yes,Fighting,1,Rare,Psychic
+120,Fossil,Dragonite,Colorless,Stage 2,45,100,Yes,,1,Rare,Fighting
+121,Fossil,Ekans,Grass,Basic,10,40,No,Psychic,1,Common,
+122,Fossil,Gengar,Psychic,Stage 2,38,80,Yes,,1,Rare,Fighting
+123,Fossil,Geodude,Fighting,Basic,16,50,No,Grass,1,Common,
+124,Fossil,Golbat,Grass,Stage 1,29,60,No,Psychic,0,Uncommon,Fighting
+125,Fossil,Golduck,Water,Stage 1,27,70,No,Lightning,1,Uncommon,
+126,Fossil,Golem,Fighting,Stage 2,36,80,No,Grass,4,Uncommon,
+127,Fossil,Graveler,Fighting,Stage 1,29,60,No,Grass,2,Uncommon,
+128,Fossil,Grimer,Grass,Basic,17,50,No,Psychic,1,Common,
+129,Fossil,Hitmonlee,Fighting,Basic,30,60,No,Psychic,1,Rare,
+130,Fossil,Horsea,Water,Basic,19,40,No,Lightning,0,Common,
+131,Fossil,Hypno,Psychic,Stage 1,36,90,No,Psychic,2,Rare,
+132,Fossil,Kabuto,Fighting,Stage 1,9,30,Yes,Grass,1,Common,
+133,Fossil,Kabutops,Fighting,Stage 2,30,60,No,Grass,1,Rare,
+134,Fossil,Kingler,Water,Stage 1,27,60,No,Lightning,3,Uncommon,
+135,Fossil,Krabby,Water,Basic,20,50,No,Lightning,2,Common,
+136,Fossil,Lapras,Water,Basic,31,80,No,Lightning,2,Rare,
+137,Fossil,Moltres,Fire,Basic,35,70,No,,2,Rare,Fighting
+138,Fossil,Muk,Grass,Stage 1,34,70,Yes,Psychic,2,Rare,
+139,Fossil,Omanyte,Water,Stage 1,19,40,Yes,Grass,1,Common,
+140,Fossil,Omastar,Water,Stage 2,32,70,No,Grass,1,Uncommon,
+141,Fossil,Psyduck,Water,Basic,15,50,No,Lightning,1,Common,
+142,Fossil,Sandslash,Fighting,Stage 1,33,70,No,Grass,1,Uncommon,Lightning
+143,Fossil,Seadra,Water,Stage 1,23,60,No,Lightning,1,Uncommon,
+144,Fossil,Shellder,Water,Basic,8,30,No,Lightning,1,Common,
+145,Fossil,Slowbro,Psychic,Stage 1,26,60,Yes,Psychic,1,Uncommon,
+146,Fossil,Slowpoke,Psychic,Basic,18,50,No,Psychic,1,Common,
+147,Fossil,Tentacool,Water,Basic,10,30,Yes,Lightning,0,Common,
+148,Fossil,Tentacruel,Water,Stage 1,21,60,No,Lightning,0,Uncommon,
+149,Fossil,Weezing,Grass,Stage 1,27,60,No,Psychic,1,Uncommon,
+150,Fossil,Zubat,Grass,Basic,10,40,No,Psychic,0,Common,Fighting
