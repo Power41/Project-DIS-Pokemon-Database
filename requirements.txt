@@ -1,7 +1,9 @@
-flask
-sqlalchemy
-flask_sqlalchemy
+Flask
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-WTF
+WTForms
+Flask-Login
 psycopg2
 requests
 pandas
-flask_login
